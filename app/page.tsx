@@ -19,10 +19,10 @@ export default function Home() {
 
         <p className="mt-3 text-base text-neutral-600">i build and Engineering @Western</p>
 
-        <p className="mt-5 font-semibold text-sm text-neutral-700">
+        <p className="mt-5 font-semibold text-base text-neutral-700">
           some things i've worked on
         </p>
-        <ul className="mt-1 flex flex-col gap-1 text-sm text-neutral-700">
+        <ul className="mt-1 flex flex-col gap-1 text-base text-neutral-700">
           <li>
             &gt; prev at a edtech startup{" "}
             <img src="/vita-logo.webp" alt="Vita" className="w-4 h-4 rounded-sm inline align-middle mr-0" />
@@ -36,8 +36,15 @@ export default function Home() {
         </ul>
       </div>
 
-      <p className="mt-20 font-semibold text-sm text-neutral-700">Projects</p>
+      <p className="mt-20 font-semibold text-base text-neutral-700">Projects</p>
       <div className="mt-3 grid grid-cols-2 gap-5 max-w-3xl">
+        <ProjectCard
+          image=""
+          title="Vibe Vids"
+          href="https://github.com/liamma06/VibeVids"
+          date="nov '25"
+          description="Automates Instagram growth by using AI influencers to script, generate, and schedule short-form content."
+        />
         <ProjectCard
           image="/projects/Spark-1-image.jpg"
           title="Care Bridge"
