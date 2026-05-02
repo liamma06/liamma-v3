@@ -34,7 +34,7 @@ export function ProjectCard({ image, video, title, date, description, href }: Pr
     <div className="flex flex-col gap-2 transition-transform duration-200 ease-out hover:-translate-y-1">
       <Wrapper
         {...(href ? { href, target: "_blank", rel: "noopener noreferrer" } : {})}
-        className="relative overflow-hidden rounded-sm aspect-[3/2] bg-neutral-100 block"
+        className="relative overflow-hidden rounded-sm aspect-[3/2] block" style={{ background: 'var(--surface)' }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -56,13 +56,13 @@ export function ProjectCard({ image, video, title, date, description, href }: Pr
       </Wrapper>
       <div className="flex justify-between items-baseline mt-1">
         {href ? (
-          <a href={href} target="_blank" rel="noopener noreferrer" className="wiggle-link text-sm font-medium text-neutral-800">{title}</a>
+          <a href={href} target="_blank" rel="noopener noreferrer" className="wiggle-link text-sm font-medium" style={{ color: 'var(--foreground)' }}>{title}</a>
         ) : (
-          <span className="text-sm font-medium text-neutral-800">{title}</span>
+          <span className="text-sm font-medium" style={{ color: 'var(--foreground)' }}>{title}</span>
         )}
-        <span className="text-xs text-neutral-400">{date}</span>
+        <span className="text-xs" style={{ color: 'var(--subtle)' }}>{date}</span>
       </div>
-      <p className="text-xs text-neutral-500 leading-relaxed">{description}</p>
+      <p className="text-xs leading-relaxed" style={{ color: 'var(--muted)' }}>{description}</p>
     </div>
   );
 }

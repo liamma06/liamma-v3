@@ -6,23 +6,23 @@ export default function Home() {
     <div className="pt-3">
       <div className="max-w-2xl">
         <div className="inline-grid group [&>*]:[grid-area:1/1] [&>*]:self-center [&>*]:transition-opacity [&>*]:duration-150">
-          <h1 className="text-5xl font-[700] tracking-tight text-neutral-800 group-hover:opacity-0">
+          <h1 className="text-5xl font-[700] tracking-tight group-hover:opacity-0" style={{ color: 'var(--foreground)' }}>
             Liam Ma
           </h1>
           <img
             src="/wiggle-name2.gif"
             alt="Liam Ma"
-            className="opacity-0 group-hover:opacity-100 pointer-events-none"
+            className="wiggle-name opacity-0 group-hover:opacity-100 pointer-events-none"
             style={{ width: 200 }}
           />
         </div>
 
-        <p className="mt-3 text-base text-neutral-600">i build and Engineering @Western</p>
+        <p className="mt-3 text-base text-[var(--muted)]">i build and Engineering @Western</p>
 
-        <p className="mt-5 font-semibold text-base text-neutral-700">
+        <p className="mt-5 font-semibold text-base text-[var(--muted)]">
           some things i've worked on
         </p>
-        <ul className="mt-1 flex flex-col gap-1 text-base text-neutral-700">
+        <ul className="mt-1 flex flex-col gap-1 text-base text-[var(--muted)]">
           <li>
             &gt; prev at a edtech startup{" "}
             <img src="/vita-logo.webp" alt="Vita" className="w-4 h-4 rounded-sm inline align-middle mr-0" />
@@ -36,8 +36,8 @@ export default function Home() {
         </ul>
       </div>
 
-      <p className="mt-20 font-semibold text-base text-neutral-700">Projects</p>
-      <div className="mt-3 grid grid-cols-2 gap-5 max-w-3xl">
+      <p className="mt-20 font-semibold text-base text-[var(--muted)]">Projects</p>
+      <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
         <ProjectCard
           image=""
           title="Vibe Vids"

@@ -53,7 +53,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 left-0 flex flex-col items-end pt-15 pr-2 w-56 h-screen pb-10 bg-[var(--background)] z-10">
+    <nav className="hidden md:flex sticky top-0 shrink-0 flex-col items-end pt-15 pr-2 w-56 h-screen pb-10 bg-[var(--background)]">
       <div className="flex flex-col items-end gap-10">
         {NAV_ITEMS.map(({ label, href }) => {
           const active = pathname === href;
@@ -61,14 +61,11 @@ export function Sidebar() {
             <Link
               key={href}
               href={href}
-              className={`
-                text-right text-[15px] px-3 py-1 w-full
-                transition-colors duration-150 leading-snug
-                ${active
-                  ? "text-black font-medium"
-                  : "text-neutral-400 hover:text-neutral-700"
-                }
-              `}
+              className="text-right text-[15px] px-3 py-1 w-full transition-colors duration-150 leading-snug"
+            style={{
+              color: active ? 'var(--foreground)' : 'var(--subtle)',
+              fontWeight: active ? 500 : 400,
+            }}
             >
               {label}
             </Link>
@@ -84,7 +81,8 @@ export function Sidebar() {
             target={href.startsWith("mailto") ? undefined : "_blank"}
             rel="noopener noreferrer"
             aria-label={label}
-            className="text-neutral-400 hover:text-neutral-700 transition-colors duration-150"
+            className="transition-colors duration-150"
+            style={{ color: 'var(--subtle)' }}
           >
             {icon}
           </a>

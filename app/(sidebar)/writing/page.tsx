@@ -9,10 +9,10 @@ export default function FieldnotesPage() {
       <ul className="mt-4 flex flex-col gap-3">
         {notes.map(note => (
           <li key={note.slug} className="flex justify-between items-baseline gap-8">
-            <Link href={`/writing/${note.slug}`} className="wiggle-link text-base text-neutral-700">
+            <Link href={`/writing/${note.slug}`} className="wiggle-link text-base" style={{ color: 'var(--foreground)' }}>
               {note.title}
             </Link>
-            <span className="text-sm text-neutral-400 shrink-0">{note.date}</span>
+            <span className="text-sm shrink-0" style={{ color: 'var(--subtle)' }}>{note.date}</span>
           </li>
         ))}
       </ul>
