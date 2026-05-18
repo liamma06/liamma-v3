@@ -1,24 +1,64 @@
 import Link from 'next/link';
-import { getAllNotes } from '@/lib/fieldnotes';
+import { getAllNotes, type NoteMetadata } from '@/lib/fieldnotes';
 import { FadeIn } from '@/components/FadeIn';
+
+function WritingCard({ note }: { note: NoteMetadata }) {
+  const hasImage = !!note.image;
+
+  return (
+    <Link
+      href={`/writing/${note.slug}`}
+      className="writing-card relative block overflow-hidden rounded-[3px]"
+      style={{ background: hasImage ? '#0d0d0d' : 'var(--surface)' }}
+    >
+      {hasImage && (
+        <img
+          src={note.image}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: 0.82, objectPosition: note.imagePosition ?? 'center' }}
+        />
+      )}
+
+
+      <div className="absolute inset-0 flex flex-col justify-end p-6">
+        <h2
+          className="text-[1.15rem] font-semibold leading-snug tracking-tight"
+          style={{ color: hasImage ? '#fff' : 'var(--foreground)' }}
+        >
+          {note.title}
+        </h2>
+        {note.description && (
+          <p
+            className="text-sm mt-1 leading-relaxed"
+            style={{ color: hasImage ? 'rgba(255,255,255,0.6)' : 'var(--muted)' }}
+          >
+            {note.description}
+          </p>
+        )}
+        <span
+          className="text-xs mt-2 block"
+          style={{ color: hasImage ? 'rgba(255,255,255,0.38)' : 'var(--subtle)' }}
+        >
+          {note.date}
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 export default function FieldnotesPage() {
   const notes = getAllNotes();
 
   return (
-    <div className="pt-3 max-w-2xl">
-      <ul className="mt-4 flex flex-col gap-3">
+    <div className="pt-3">
+      <div className="flex flex-col gap-4 max-w-2xl">
         {notes.map((note, i) => (
           <FadeIn key={note.slug} step={i}>
-            <li className="flex justify-between items-baseline gap-8">
-              <Link href={`/writing/${note.slug}`} className="wiggle-link text-base" style={{ color: 'var(--foreground)' }}>
-                {note.title}
-              </Link>
-              <span className="text-sm shrink-0" style={{ color: 'var(--subtle)' }}>{note.date}</span>
-            </li>
+            <WritingCard note={note} />
           </FadeIn>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

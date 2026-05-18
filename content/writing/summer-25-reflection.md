@@ -2,6 +2,8 @@
 title: "Summer Reflection"
 date: "Sep 2025"
 description: "Looking back at what I actually accomplished this summer"
+image: "/writing-header-images/HongkongSign.jpg"
+imagePosition: "center 40%"
 ---
 
 With Summer 25 coming to an end... let's see what I actually accomplished!

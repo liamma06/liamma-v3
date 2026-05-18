@@ -2,6 +2,8 @@
 title: "Summer 2025"
 date: "Jun 2025"
 description: "Goals for the summer and what I'm working toward"
+image: "/writing-header-images/JapanMirror.jpeg"
+imagePosition: "center 2%"
 ---
 
 I am not your average engineering student, I am below 😂 (well at least right now).
