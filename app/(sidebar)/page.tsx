@@ -44,7 +44,8 @@ export default function Home() {
         <p className="font-semibold text-base text-[var(--muted)]">Projects</p>
         <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
           <ProjectCard
-            image=""
+            video="/projects/VibeVid.mp4"
+            autoPlay
             title="Vibe Vids"
             href="https://github.com/liamma06/VibeVids"
             date="nov '25"

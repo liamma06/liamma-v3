@@ -80,8 +80,7 @@ export function MobileNav() {
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                style={{ textDecoration: "none" }}
-                style={{ color: active ? 'var(--foreground)' : 'var(--subtle)' }}
+                style={{ textDecoration: "none", color: active ? 'var(--foreground)' : 'var(--subtle)' }}
                 className="text-2xl transition-colors duration-150"
               >
                 {label}

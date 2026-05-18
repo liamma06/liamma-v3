@@ -3,32 +3,34 @@
 import { useRef, useState } from "react";
 
 interface ProjectCardProps {
-  image: string;
+  image?: string;
   video?: string;
+  autoPlay?: boolean;
   title: string;
   date: string;
   description: string;
   href?: string;
 }
 
-export function ProjectCard({ image, video, title, date, description, href }: ProjectCardProps) {
+export function ProjectCard({ image, video, autoPlay = false, title, date, description, href }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hovered, setHovered] = useState(false);
 
   const handleMouseEnter = () => {
     setHovered(true);
-    videoRef.current?.play();
+    if (!autoPlay) videoRef.current?.play();
   };
 
   const handleMouseLeave = () => {
     setHovered(false);
-    if (videoRef.current) {
+    if (!autoPlay && videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
   };
 
   const Wrapper = href ? "a" : "div";
+  const showVideo = autoPlay || hovered;
 
   return (
     <div className="flex flex-col gap-2 transition-transform duration-200 ease-out hover:-translate-y-1">
@@ -38,11 +40,13 @@ export function ProjectCard({ image, video, title, date, description, href }: Pr
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <img
-          src={image}
-          alt={title}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${hovered && video ? "opacity-0" : "opacity-100"}`}
-        />
+        {image && (
+          <img
+            src={image}
+            alt={title}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showVideo && video ? "opacity-0" : "opacity-100"}`}
+          />
+        )}
         {video && (
           <video
             ref={videoRef}
@@ -50,7 +54,8 @@ export function ProjectCard({ image, video, title, date, description, href }: Pr
             muted
             loop
             playsInline
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${hovered ? "opacity-100" : "opacity-0"}`}
+            autoPlay={autoPlay}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showVideo ? "opacity-100" : "opacity-0"}`}
           />
         )}
       </Wrapper>
