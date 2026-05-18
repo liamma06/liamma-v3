@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "liamma",
@@ -21,6 +22,7 @@ export default function RootLayout({
           {children}
           <ThemeToggle />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
