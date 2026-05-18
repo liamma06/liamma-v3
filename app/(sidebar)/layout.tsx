@@ -1,5 +1,6 @@
 import { Sidebar } from "@/components/Sidebar";
 import { MobileNav } from "@/components/MobileNav";
+import { PageTransition } from "@/components/PageTransition";
 
 export default function SidebarLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,7 +14,7 @@ export default function SidebarLayout({ children }: { children: React.ReactNode 
       >
         <Sidebar />
         <main className="flex-1 px-4 py-6 pt-16 md:px-10 md:py-10 md:pt-10">
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
       </div>
     </div>

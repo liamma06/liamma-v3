@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { BRAINDUMP_DATA, BRAINDUMP_YEARS, type BraindumpItem } from "@/lib/braindump-data";
+import { FadeIn } from "@/components/FadeIn";
 
 function NoteCard({ item }: { item: BraindumpItem }) {
   const [hovered, setHovered] = useState(false);
@@ -174,45 +175,49 @@ export default function BraindumpPage() {
 
   return (
     <div className="pb-16">
-      {/* Year tabs */}
-      <div className="flex items-center gap-6 mb-8 pb-3">
-        {BRAINDUMP_YEARS.map((year) => (
-          <button
-            key={year}
-            onClick={() => setActiveYear(year)}
-            className={`text-sm transition-colors duration-150 ${activeYear === year ? "wiggle-active" : ""}`}
-            style={{ color: activeYear === year ? "#171717" : "#a3a3a3" }}
-            onMouseEnter={(e) => {
-              if (activeYear !== year)
-                (e.currentTarget as HTMLButtonElement).style.color = "#525252";
-            }}
-            onMouseLeave={(e) => {
-              if (activeYear !== year)
-                (e.currentTarget as HTMLButtonElement).style.color = "#a3a3a3";
+      <FadeIn step={0}>
+        {/* Year tabs */}
+        <div className="flex items-center gap-6 mb-8 pb-3">
+          {BRAINDUMP_YEARS.map((year) => (
+            <button
+              key={year}
+              onClick={() => setActiveYear(year)}
+              className={`text-sm transition-colors duration-150 ${activeYear === year ? "wiggle-active" : ""}`}
+              style={{ color: activeYear === year ? "#171717" : "#a3a3a3" }}
+              onMouseEnter={(e) => {
+                if (activeYear !== year)
+                  (e.currentTarget as HTMLButtonElement).style.color = "#525252";
+              }}
+              onMouseLeave={(e) => {
+                if (activeYear !== year)
+                  (e.currentTarget as HTMLButtonElement).style.color = "#a3a3a3";
+              }}
+            >
+              {year}
+            </button>
+          ))}
+        </div>
+      </FadeIn>
+
+      <FadeIn step={1}>
+        {/* Masonry grid */}
+        {items.length === 0 ? (
+          <p className="text-sm text-neutral-400 mt-8">nothing here yet.</p>
+        ) : (
+          <div
+            style={{
+              columns: "3 200px",
+              columnGap: "16px",
             }}
           >
-            {year}
-          </button>
-        ))}
-      </div>
-
-      {/* Masonry grid */}
-      {items.length === 0 ? (
-        <p className="text-sm text-neutral-400 mt-8">nothing here yet.</p>
-      ) : (
-        <div
-          style={{
-            columns: "3 200px",
-            columnGap: "16px",
-          }}
-        >
-          {items.map((item) => {
-            if (item.type === "note") return <NoteCard key={item.id} item={item} />;
-            if (item.type === "image") return <ImageCard key={item.id} item={item} />;
-            if (item.type === "video") return <VideoCard key={item.id} item={item} />;
-          })}
-        </div>
-      )}
+            {items.map((item) => {
+              if (item.type === "note") return <NoteCard key={item.id} item={item} />;
+              if (item.type === "image") return <ImageCard key={item.id} item={item} />;
+              if (item.type === "video") return <VideoCard key={item.id} item={item} />;
+            })}
+          </div>
+        )}
+      </FadeIn>
     </div>
   );
 }
