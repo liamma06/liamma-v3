@@ -10,7 +10,7 @@ export function ThemeToggle() {
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle theme"
-      className="fixed top-15 right-30 text-neutral-400 hover:text-neutral-700 transition-colors duration-150"
+      className="hidden md:block fixed top-15 right-30 text-neutral-400 hover:text-neutral-700 transition-colors duration-150"
     >
       {isDark ? (
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">

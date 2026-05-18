@@ -42,12 +42,12 @@ export default function BraindumpPage() {
               key={year}
               onClick={() => setActiveYear(year)}
               className={`text-sm transition-colors duration-150 ${activeYear === year ? "wiggle-active" : ""}`}
-              style={{ color: activeYear === year ? "#171717" : "#a3a3a3" }}
+              style={{ color: activeYear === year ? 'var(--foreground)' : 'var(--subtle)' }}
               onMouseEnter={(e) => {
-                if (activeYear !== year) (e.currentTarget as HTMLButtonElement).style.color = "#525252";
+                if (activeYear !== year) (e.currentTarget as HTMLButtonElement).style.color = 'var(--muted)';
               }}
               onMouseLeave={(e) => {
-                if (activeYear !== year) (e.currentTarget as HTMLButtonElement).style.color = "#a3a3a3";
+                if (activeYear !== year) (e.currentTarget as HTMLButtonElement).style.color = 'var(--subtle)';
               }}
             >
               {year}
