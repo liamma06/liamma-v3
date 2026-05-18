@@ -51,8 +51,7 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
 
         {/* Article in the content slot */}
         <main
-          className="flex-1 flex justify-center px-4 pt-16 pb-10 md:pt-10"
-          style={{ paddingRight: 'max(14rem, calc(50vw - 24rem))' }}
+          className="flex-1 flex justify-center px-4 pt-16 pb-10 md:pt-10 lg:pr-[max(14rem,calc(50vw-24rem))]"
         >
           <article className="w-full max-w-2xl">
             <h1 className="text-2xl font-semibold leading-snug" style={{ color: 'var(--foreground)' }}>{frontmatter.title}</h1>
