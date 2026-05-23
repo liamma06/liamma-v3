@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllNotes, type NoteMetadata } from '@/lib/fieldnotes';
+import { getAllNotes, type NoteMetadata } from '@/lib/writing';
 import { FadeIn } from '@/components/FadeIn';
 
 function WritingCard({ note }: { note: NoteMetadata }) {

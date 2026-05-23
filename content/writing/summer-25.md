@@ -1,4 +1,4 @@
----
+﻿---
 title: "Summer 2025"
 date: "Jun 2025"
 description: "Goals for the summer and what I'm working toward"
@@ -6,7 +6,7 @@ image: "/writing-header-images/JapanMirror.jpeg"
 imagePosition: "center 2%"
 ---
 
-I am not your average engineering student, I am below 😂 (well at least right now).
+I am not your average engineering student, I am below ðŸ˜‚ (well at least right now).
 
 I've heard it endlessly, "If you are not building projects and learning outside of school you stand no chance in this tech industry". Like many others, I told myself: this is my year, I'm going to be super focused, working on projects daily while balancing school work.
 
@@ -24,7 +24,7 @@ But lately, I've been questioning that whole idea. It's not just the students th
 
 Enough about Waterloo.
 
-Maybe it is not as obvious but it does exist at Western. And that's the part I struggled with because I wasn't putting myself out there — joining those clubs, applying to the teams, attending those events.
+Maybe it is not as obvious but it does exist at Western. And that's the part I struggled with because I wasn't putting myself out there â€” joining those clubs, applying to the teams, attending those events.
 
 **So the theme of my summer is simple:** taking intentional action to push past my comfort zone, and finally giving myself the chance to grow.
 
@@ -32,8 +32,9 @@ Maybe it is not as obvious but it does exist at Western. And that's the part I s
 
 - Continue creating projects with the intention to learn, not just complete. It is so convenient to just prompt AI to generate code and it takes discipline to search for understanding rather than just getting the feeling of fulfillment seen in the project progression.
 - Starting in July I have something lined up for 2 months (in Hong Kong). During these days it is most important for me to minimize destructive habits (sleeping late, doomscrolling) and optimize time.
-- Before summer: little knowledge of React, no idea what APIs & databases are, no DSA knowledge — let's see how much growth happens.
+- Before summer: little knowledge of React, no idea what APIs & databases are, no DSA knowledge â€” let's see how much growth happens.
 
 ---
 
 **Note:** Adjust your expectations accordingly. If you want to chat please contact me below!
+

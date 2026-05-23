@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getNoteBySlug, getAllNotes, type NoteMetadata, type Heading } from '@/lib/fieldnotes';
+import { getNoteBySlug, getAllNotes, type NoteMetadata, type Heading } from '@/lib/writing';
 import { MobileNav } from '@/components/MobileNav';
 
 export async function generateStaticParams() {
