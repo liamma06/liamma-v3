@@ -214,6 +214,13 @@ a {
   min-height: 190px;
 }
 
+@media (max-width: 768px) {
+  .braindump-meta {
+    opacity: 1 !important;
+    margin-bottom: 6px;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
