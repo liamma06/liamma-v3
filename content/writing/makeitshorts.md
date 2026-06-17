@@ -188,7 +188,9 @@ It also made me realize there were levels to this stuff. AWS alone is super deep
 
 I definitely want to continue learning about AWS/infra, AI agents, Claude. 
 
-**Haven't deployed yet still want to see how I can improve**
+Check it out here-> [makeitshorts.vercel.app](https://makeitshorts.vercel.app/)
+
+[Github](https://github.com/liamma06/makeitshorts)
 
 FOLLOW @[kitty.tech_](https://www.instagram.com/kitty.tech_/) on instagram! 
 <img src="/writing/makeitshorts/IMG_2143.jpeg" style="width: 50%" />

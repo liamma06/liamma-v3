@@ -48,7 +48,7 @@ export default function Home() {
             video="/projects/makeitshorts.mp4"
             autoPlay
             title="Make It Shorts"
-            href="https://github.com/liamma06/makeitshorts"
+            href="https://makeitshorts.vercel.app/"
             date="june '26"
             description="Turns any topic into an explainer short with animated characters, voiceover, and captions."
           />
