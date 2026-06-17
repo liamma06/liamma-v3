@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeStringify from 'rehype-stringify';
 
 const contentDir = path.join(process.cwd(), 'content/writing');
 
@@ -56,7 +59,12 @@ export function getAllNotes(): NoteMetadata[] {
 export async function getNoteBySlug(slug: string) {
   const raw = fs.readFileSync(path.join(contentDir, `${slug}.md`), 'utf8');
   const { data, content } = matter(raw);
-  const processed = await remark().use(html).process(content);
+  const processed = await unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeHighlight)
+    .use(rehypeStringify, { allowDangerousHtml: true })
+    .process(content);
   return {
     frontmatter: data as NoteMetadata,
     contentHtml: addHeadingIds(processed.toString()),

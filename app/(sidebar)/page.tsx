@@ -43,6 +43,16 @@ export default function Home() {
       <FadeIn step={2} className="mt-20">
         <p className="font-semibold text-base text-[var(--muted)]">Projects</p>
         <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
+        
+           <ProjectCard
+            video="/projects/makeitshorts.mp4"
+            autoPlay
+            title="Make It Shorts"
+            href="https://github.com/liamma06/makeitshorts"
+            date="june '26"
+            description="Turns any topic into an explainer short with animated characters, voiceover, and captions."
+          />
+
           <ProjectCard
             video="/projects/VibeVid.mp4"
             autoPlay
@@ -63,7 +73,7 @@ export default function Home() {
             title="Trash To Impress"
             href="https://github.com/liamma06/trashtoimpress"
             date="oct '25"
-            description="Product designing tool for reusing waste materials, powered by Gemini and LangChain workflow. Submitted to Hack the Campus"
+            description="Product designing tool for reusing waste materials, powered by Gemini and LangChain workflow. Won at Hack the Campus"
           />
         </div>
       </FadeIn>
