@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 interface ProjectCardProps {
   image?: string;
@@ -15,6 +15,12 @@ interface ProjectCardProps {
 export function ProjectCard({ image, video, autoPlay = false, title, date, description, href }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    if (autoPlay && videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, [autoPlay]);
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -55,6 +61,7 @@ export function ProjectCard({ image, video, autoPlay = false, title, date, descr
             loop
             playsInline
             autoPlay={autoPlay}
+            preload="auto"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showVideo ? "opacity-100" : "opacity-0"}`}
           />
         )}
