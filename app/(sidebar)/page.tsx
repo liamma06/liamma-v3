@@ -7,7 +7,7 @@ export default function Home() {
     <div className="pt-3">
       <div className="max-w-2xl">
         <FadeIn step={0}>
-          <div className="inline-grid group [&>*]:[grid-area:1/1] [&>*]:self-center [&>*]:transition-opacity [&>*]:duration-150">
+          <div className="title-grid inline-grid group [&>*]:[grid-area:1/1] [&>*]:self-center [&>*]:transition-opacity [&>*]:duration-150">
             <h1 className="text-5xl font-[700] tracking-tight group-hover:opacity-0" style={{ color: 'var(--foreground)' }}>
               Liam Ma
             </h1>

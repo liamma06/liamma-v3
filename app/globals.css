@@ -85,6 +85,10 @@ a {
   filter: invert(1);
 }
 
+[data-theme="dark"] .title-grid {
+  mix-blend-mode: screen;
+}
+
 [data-theme="dark"] .wiggle-link {
   text-decoration-color: #404040;
 }
@@ -259,7 +263,7 @@ a {
 }
 
 .fade-in-section {
-  animation: fade-in-section 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-in-section 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 .writing-card {
