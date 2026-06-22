@@ -267,12 +267,22 @@ a {
 }
 
 .writing-card {
-  min-height: 155px;
+  min-height: 80px;
   transition: min-height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .writing-card:hover {
-  min-height: 190px;
+  min-height: 110px;
+}
+
+@media (min-width: 768px) {
+  .writing-card {
+    min-height: 120px;
+  }
+
+  .writing-card:hover {
+    min-height: 160px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -280,6 +290,12 @@ a {
     opacity: 1 !important;
     margin-bottom: 6px;
   }
+}
+
+
+body,
+.sidebar-nav {
+  transition: background 0.2s, color 0.2s;
 }
 
 body {
@@ -291,5 +307,4 @@ body {
   letter-spacing: -0.01em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.2s, color 0.2s;
 }

@@ -20,17 +20,16 @@ function WritingCard({ note }: { note: NoteMetadata }) {
         />
       )}
 
-
-      <div className="absolute inset-0 flex flex-col justify-end p-6">
+      <div className="absolute inset-0 flex flex-col justify-center md:justify-end p-5 md:p-6">
         <h2
-          className="text-[1.15rem] font-semibold leading-snug tracking-tight"
-          style={{ color: hasImage ? '#fff' : 'var(--foreground)' }}
+          className="font-semibold leading-snug tracking-tight line-clamp-2"
+          style={{ color: hasImage ? '#fff' : 'var(--foreground)', fontSize: 'clamp(0.8rem, 3.5vw, 1.15rem)' }}
         >
           {note.title}
         </h2>
         {note.description && (
           <p
-            className="text-sm mt-1 leading-relaxed"
+            className="hidden md:block text-sm mt-1 leading-relaxed"
             style={{ color: hasImage ? 'rgba(255,255,255,0.6)' : 'var(--muted)' }}
           >
             {note.description}
