@@ -56,10 +56,10 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
 
         {/* Article in the content slot */}
         <main
-          className="flex-1 flex justify-center px-4 pt-16 pb-10 md:pt-10 lg:pr-[max(14rem,calc(50vw-24rem))]"
+          className="flex-1 min-w-0 flex justify-center px-4 pt-16 pb-10 md:pt-10 lg:pr-[max(14rem,calc(50vw-24rem))]"
         >
-          <article className="w-full max-w-2xl">
-            <h1 className="text-3xl font-semibold leading-snug" style={{ color: 'var(--foreground)' }}>{frontmatter.title}</h1>
+          <article className="w-full min-w-0 max-w-2xl">
+            <h1 className="text-2xl md:text-3xl font-semibold leading-snug" style={{ color: 'var(--foreground)' }}>{frontmatter.title}</h1>
             <p className="text-xs mt-1 mb-10" style={{ color: 'var(--subtle)' }}>{frontmatter.date}</p>
             <div className="prose-content" dangerouslySetInnerHTML={{ __html: contentHtml }} />
           </article>

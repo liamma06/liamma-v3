@@ -20,23 +20,33 @@ function WritingCard({ note }: { note: NoteMetadata }) {
         />
       )}
 
-      <div className="absolute inset-0 flex flex-col justify-center md:justify-end p-5 md:p-6">
-        <h2
-          className="font-semibold leading-snug tracking-tight line-clamp-2"
-          style={{ color: hasImage ? '#fff' : 'var(--foreground)', fontSize: 'clamp(0.8rem, 3.5vw, 1.15rem)' }}
-        >
-          {note.title}
-        </h2>
-        {note.description && (
-          <p
-            className="hidden md:block text-sm mt-1 leading-relaxed"
-            style={{ color: hasImage ? 'rgba(255,255,255,0.6)' : 'var(--muted)' }}
+      <div className="absolute inset-0 flex flex-col p-5 md:p-6">
+        <div className="flex-1 flex items-center">
+          <h2
+            className="text-sm md:text-[1.15rem] font-semibold leading-snug tracking-tight"
+            style={{ color: hasImage ? '#fff' : 'var(--foreground)' }}
           >
-            {note.description}
-          </p>
-        )}
+            {note.title}
+          </h2>
+        </div>
+        <div className="hidden md:block">
+          {note.description && (
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: hasImage ? 'rgba(255,255,255,0.6)' : 'var(--muted)' }}
+            >
+              {note.description}
+            </p>
+          )}
+          <span
+            className="text-[0.8rem] mt-1 block"
+            style={{ color: hasImage ? 'rgba(255,255,255,0.38)' : 'var(--subtle)' }}
+          >
+            {note.date}
+          </span>
+        </div>
         <span
-          className="text-xs mt-2 block"
+          className="md:hidden text-[0.8rem] mt-1 block"
           style={{ color: hasImage ? 'rgba(255,255,255,0.38)' : 'var(--subtle)' }}
         >
           {note.date}

@@ -107,7 +107,7 @@ a {
 [data-theme="dark"] .prose-content hr { border-color: #262626; }
 
 .prose-content h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #171717;
   margin-top: 2.5rem;
@@ -116,7 +116,7 @@ a {
 }
 
 .prose-content h2 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #171717;
   margin-top: 2rem;
@@ -125,11 +125,17 @@ a {
 }
 
 .prose-content h3 {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #262626;
   margin-top: 1.5rem;
   margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .prose-content h1 { font-size: 1.5rem; }
+  .prose-content h2 { font-size: 1.2rem; }
+  .prose-content h3 { font-size: 0.95rem; }
 }
 
 .prose-content p {
@@ -294,12 +300,18 @@ a {
 
 
 body,
-.sidebar-nav {
-  transition: background 0.2s, color 0.2s;
+.sidebar-nav,
+.mobile-nav {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav-overlay {
+  transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
 body {
-  background: var(--background);
+  overflow-x: hidden;
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), sans-serif;
   font-size: 15px;

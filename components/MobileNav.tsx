@@ -51,7 +51,7 @@ export function MobileNav() {
 
   return (
     <>
-      <nav className="md:hidden fixed top-0 left-0 right-0 z-30 bg-[var(--background)] h-12 flex items-center justify-end px-5">
+      <nav className="mobile-nav md:hidden fixed top-0 left-0 right-0 z-30 bg-[var(--background)] h-12 flex items-center justify-end px-5">
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
@@ -74,7 +74,7 @@ export function MobileNav() {
 
       {/* Overlay menu */}
       <div
-        className="md:hidden fixed inset-0 z-20 bg-[var(--background)] flex flex-col px-8 pt-20 pb-10 transition-all duration-200"
+        className="mobile-nav-overlay md:hidden fixed inset-0 z-20 bg-[var(--background)] flex flex-col px-8 pt-20 pb-10"
         style={{ opacity: open ? 1 : 0, pointerEvents: open ? "auto" : "none" }}
       >
         <div className="flex flex-col gap-8 mt-4">
