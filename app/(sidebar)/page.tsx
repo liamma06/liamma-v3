@@ -18,7 +18,7 @@ export default function Home() {
               style={{ width: 200 }}
             />
           </div>
-          <p className="mt-3 text-base text-[var(--muted)]">i build and Engineering @Western</p>
+          <p className="mt-3 text-base text-[var(--muted)]">Engineering @Western</p>
         </FadeIn>
 
         <FadeIn step={1} className="mt-5">
