@@ -54,6 +54,15 @@ export default function Home() {
           />
 
           <ProjectCard
+            image="/projects/Clipfarm.jpg"
+            autoPlay
+            title="Video Virality Predictor"
+            href="https://liamma.com/writing/clipfarm"
+            date="april '26"
+            description="Multimodal model that predicts the virality of a video. presented at CUCAI 26 "
+          />
+
+          <ProjectCard
             video="/projects/VibeVid.mp4"
             autoPlay
             title="Vibe Vids"

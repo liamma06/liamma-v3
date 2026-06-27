@@ -10,7 +10,7 @@ import { BlockMath, InlineMath } from '@/components/Math'
 
 Over the past school year (Sept -> April) I was apart of Western AI and with a group of 5 we made a video virality predictor. It takes a youtube short and tries to predict the number of views. 
 
-<a href="/assets/ClipFarm.pdf" target="_blank" rel="noopener noreferrer">Check out the report</a>
+<a href="/assets/clipfarm/ClipFarm.pdf" target="_blank" rel="noopener noreferrer">Check out the report</a>
 
 [View on GitHub](https://github.com/Western-Artificial-Intelligence/video-virality-predictor)
 
@@ -43,7 +43,7 @@ Seems simple but there are many nuances.
 This was probably the most interesting embedding to me.
 
 <figure>
-  <img src="/assets/videomae_architecture.jpeg" alt="VideoMAE architecture" style={{ width: "100%", borderRadius: 8 }} />
+  <img src="/assets/clipfarm/videomae_architecture.jpeg" alt="VideoMAE architecture" style={{ width: "100%", borderRadius: 8 }} />
   <figcaption style={{ textAlign: "center", fontSize: "0.75rem", marginTop: "0.4rem", opacity: 0.5 }}>VideoMAE pre-training. Source <a href="https://huggingface.co/papers/2203.12602" target="_blank" rel="noopener noreferrer">original paper</a></figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ A brief overview:
   - smaller signals that don't represent too much variance are dropped
   - linear transformation of the data to a new coordinate system
 <figure>
-  <img src="/assets/pca_elbow.png" alt="PCA elbow plot" style={{ width: "50%", borderRadius: 8 }} />
+  <img src="/assets/clipfarm/pca_elbow.png" alt="PCA elbow plot" style={{ width: "50%", borderRadius: 8, display: "block", margin: "1rem auto" }} />
   <figcaption style={{ textAlign: "center", fontSize: "0.75rem", marginTop: "0.4rem", opacity: 0.5 }}>Variance captured vs number of components</figcaption>
 </figure>
 
@@ -134,6 +134,8 @@ Measure how close each video is to one another in the same cluster vs how far it
 silhouettes[k] = silhouette_score(X, labels)
 best_k = max(silhouettes, key=lambda k: silhouettes[k])
 ```
+
+<img src="/assets/clipfarm/cluster.jpg" alt="cluster image" style={{ width: "50%", borderRadius: 8, display: "block", margin: "1rem auto" }} />
 
 # Cluster Interpretation
 After clustering, the videos are grouped. 
