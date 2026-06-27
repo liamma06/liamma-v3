@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getNoteBySlug, getAllNotes, type NoteMetadata, type Heading } from '@/lib/writing';
 import { MobileNav } from '@/components/MobileNav';
+import type { ComponentType } from 'react';
 
 export async function generateStaticParams() {
   return getAllNotes().map((n: NoteMetadata) => ({ slug: n.slug }));
@@ -8,7 +9,18 @@ export async function generateStaticParams() {
 
 export default async function NotePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const { frontmatter, contentHtml, headings } = await getNoteBySlug(slug);
+  const { frontmatter, contentHtml, headings, isMdx, isFolder } = await getNoteBySlug(slug);
+
+  let MdxContent: ComponentType | null = null;
+  if (isMdx) {
+    if (isFolder) {
+      const mod = await import(`@/content/writing/${slug}/index.mdx`);
+      MdxContent = mod.default;
+    } else {
+      const mod = await import(`@/content/writing/${slug}.mdx`);
+      MdxContent = mod.default;
+    }
+  }
 
   return (
     <div className="min-h-screen">
@@ -61,7 +73,13 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
           <article className="w-full min-w-0 max-w-2xl">
             <h1 className="text-2xl md:text-3xl font-semibold leading-snug" style={{ color: 'var(--foreground)' }}>{frontmatter.title}</h1>
             <p className="text-xs mt-1 mb-10" style={{ color: 'var(--subtle)' }}>{frontmatter.date}</p>
-            <div className="prose-content" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+            {MdxContent ? (
+              <div className="prose-content">
+                <MdxContent />
+              </div>
+            ) : (
+              <div className="prose-content" dangerouslySetInnerHTML={{ __html: contentHtml! }} />
+            )}
           </article>
         </main>
       </div>
