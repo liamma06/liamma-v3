@@ -3,7 +3,7 @@ title: "notes and thoughts"
 date: ""
 description: "Every month"
 image: "/writing-header-images/JapanMirror.jpeg"
-imagePosition: "center 7%"
+imagePosition: "center 12.5%"
 ---
 
 #### July 26 
