@@ -82,7 +82,7 @@ export default function Home() {
             title="Trash To Impress"
             href="https://github.com/liamma06/trashtoimpress"
             date="oct '25"
-            description="Product designing tool for reusing waste materials, powered by Gemini and LangChain workflow. Won at Hack the Campus"
+            description="Product designing tool for reusing waste materials, powered by Gemini and LangChain workflow."
           />
         </div>
       </FadeIn>
