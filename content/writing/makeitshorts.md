@@ -4,6 +4,7 @@ date: "June 2026"
 description: "Wow a lot went wrong"
 image: "/writing-header-images/cat.jpeg"
 imagePosition: "center 40%"
+category: projects
 ---
 
 # Inspiration

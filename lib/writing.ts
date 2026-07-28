@@ -16,6 +16,7 @@ export interface NoteMetadata {
   description?: string;
   image?: string;
   imagePosition?: string;
+  category?: string;
 }
 
 export interface Heading {
@@ -76,7 +77,7 @@ export function getAllNotes(): NoteMetadata[] {
   return [...slugs].map(slug => {
     const { filePath } = resolveNoteFile(slug);
     const { data } = matter(fs.readFileSync(filePath, 'utf8'));
-    return { slug, title: data.title, date: data.date, description: data.description, image: data.image, imagePosition: data.imagePosition };
+    return { slug, title: data.title, date: data.date, description: data.description, image: data.image, imagePosition: data.imagePosition, category: data.category };
   }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 

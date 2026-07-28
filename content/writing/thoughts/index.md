@@ -4,6 +4,7 @@ date: ""
 description: "Every month"
 image: "/writing-header-images/JapanMirror.jpeg"
 imagePosition: "center 12.5%"
+category: thoughts
 ---
 
 #### July 26 
