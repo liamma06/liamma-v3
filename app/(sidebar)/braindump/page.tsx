@@ -129,14 +129,7 @@ export default function BraindumpPage() {
             <button
               key={year}
               onClick={() => setActiveYear(year)}
-              className={`text-sm transition-colors duration-150 ${activeYear === year ? "wiggle-active" : ""}`}
-              style={{ color: activeYear === year ? 'var(--foreground)' : 'var(--subtle)' }}
-              onMouseEnter={(e) => {
-                if (activeYear !== year) (e.currentTarget as HTMLButtonElement).style.color = 'var(--muted)';
-              }}
-              onMouseLeave={(e) => {
-                if (activeYear !== year) (e.currentTarget as HTMLButtonElement).style.color = 'var(--subtle)';
-              }}
+              className={`text-sm transition-colors duration-150 bg-transparent border-none cursor-pointer p-0 ${activeYear === year ? 'text-foreground wiggle-active' : 'text-subtle hover:text-muted'}`}
             >
               {year}
             </button>

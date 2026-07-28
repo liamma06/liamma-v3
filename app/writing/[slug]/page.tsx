@@ -33,15 +33,13 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
         >
           <Link
             href="/writing"
-            className="text-sm transition-colors duration-150 mb-8 w-full text-left pl-3"
-            style={{ color: 'var(--subtle)' }}
-            onMouseOver={undefined}
+            className="text-sm transition-colors duration-150 mb-8 w-full text-left pl-3 text-subtle"
           >
             ← writing
           </Link>
           {headings.length > 0 && (
             <div className="w-full">
-              <p className="text-[11px] font-semibold uppercase tracking-widest mb-4 text-left pl-3" style={{ color: 'var(--subtle)' }}>
+              <p className="text-[11px] font-semibold uppercase tracking-widest mb-4 text-left pl-3 text-subtle">
                 on this page
               </p>
               <ul className="flex flex-col gap-3">
@@ -49,11 +47,9 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
                   <li key={h.id} style={{ paddingLeft: (h.level - 1) * 12 }}>
                     <a
                       href={`#${h.id}`}
-                      className="transition-colors duration-150 leading-snug block text-left pl-3"
+                      className={`transition-colors duration-150 leading-snug block text-left pl-3 ${h.level === 1 ? 'text-muted' : 'text-subtle'}`}
                       style={{
-                        color: h.level === 1 ? 'var(--muted)' : h.level === 2 ? 'var(--subtle)' : 'var(--subtle)',
                         fontSize: h.level === 1 ? '0.85rem' : h.level === 2 ? '0.8rem' : '0.72rem',
-                        fontWeight: 400,
                         opacity: h.level === 3 ? 0.7 : 1,
                       }}
                     >
@@ -71,8 +67,8 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
           className="flex-1 min-w-0 flex justify-center px-4 pt-16 pb-10 md:pt-10 lg:pr-[max(14rem,calc(50vw-24rem))]"
         >
           <article className="w-full min-w-0 max-w-2xl">
-            <h1 className="text-2xl md:text-3xl font-semibold leading-snug" style={{ color: 'var(--foreground)' }}>{frontmatter.title}</h1>
-            <p className="text-xs mt-1 mb-10" style={{ color: 'var(--subtle)' }}>{frontmatter.date}</p>
+            <h1 className="text-2xl md:text-3xl font-semibold leading-snug text-foreground">{frontmatter.title}</h1>
+            <p className="text-xs mt-1 mb-10 text-subtle">{frontmatter.date}</p>
             {MdxContent ? (
               <div className="prose-content">
                 <MdxContent />

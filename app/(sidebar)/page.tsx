@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-2xl">
         <FadeIn step={0}>
           <div className="title-grid inline-grid group [&>*]:[grid-area:1/1] [&>*]:self-center [&>*]:transition-opacity [&>*]:duration-150">
-            <h1 className="text-5xl font-[700] tracking-tight group-hover:opacity-0" style={{ color: 'var(--foreground)' }}>
+            <h1 className="text-5xl font-[700] tracking-tight group-hover:opacity-0 text-foreground">
               Liam Ma
             </h1>
             <img
@@ -18,11 +18,11 @@ export default function Home() {
               style={{ width: 200 }}
             />
           </div>
-          <p className="mt-3 text-base text-[var(--muted)]">Engineering @Western</p>
+          <p className="mt-3 text-base text-muted">Engineering @Western</p>
         </FadeIn>
 
         <FadeIn step={1} className="mt-5">
-          <p className="font-semibold text-base text-[var(--muted)]">
+          <p className="font-semibold text-base text-muted">
             some things i've worked on
           </p>
           <ul className="mt-1 flex flex-col gap-1 text-base text-[var(--muted)]">
@@ -41,7 +41,7 @@ export default function Home() {
       </div>
 
       <FadeIn step={2} className="mt-20">
-        <p className="font-semibold text-base text-[var(--muted)]">Projects</p>
+        <p className="font-semibold text-base text-muted">Projects</p>
         <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
         
            <ProjectCard

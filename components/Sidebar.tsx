@@ -61,11 +61,7 @@ export function Sidebar() {
             <Link
               key={href}
               href={href}
-              className="text-right text-[15px] px-3 py-1 w-full transition-colors duration-150 leading-snug"
-            style={{
-              color: active ? 'var(--foreground)' : 'var(--subtle)',
-              fontWeight: active ? 500 : 400,
-            }}
+              className={`text-right text-[15px] px-3 py-1 w-full transition-colors duration-150 leading-snug ${active ? 'text-foreground font-medium' : 'text-subtle font-normal'}`}
             >
               {label}
             </Link>
@@ -81,8 +77,7 @@ export function Sidebar() {
             target={href.startsWith("mailto") ? undefined : "_blank"}
             rel="noopener noreferrer"
             aria-label={label}
-            className="transition-colors duration-150"
-            style={{ color: 'var(--subtle)' }}
+            className="transition-colors duration-150 text-subtle"
           >
             {icon}
           </a>

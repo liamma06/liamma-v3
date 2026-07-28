@@ -79,17 +79,7 @@ export function WritingTabs({ notes }: { notes: NoteMetadata[] }) {
           <button
             key={tab.value}
             onClick={() => setActive(tab.value)}
-            style={{
-              color: active === tab.value ? 'var(--foreground)' : 'var(--muted)',
-              fontWeight: active === tab.value ? 500 : 400,
-              fontSize: '0.875rem',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              padding: 0,
-              display: 'flex',
-              alignItems: 'center',
-            }}
+            className={`flex items-center text-sm cursor-pointer bg-transparent border-none p-0 ${active === tab.value ? 'text-foreground font-medium' : 'text-muted font-normal'}`}
           >
             {active === tab.value && (
               <img
