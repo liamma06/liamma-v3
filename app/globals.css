@@ -279,7 +279,7 @@ a {
 
 .writing-card {
   min-height: 80px;
-  transition: min-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: min-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .writing-card:hover {
