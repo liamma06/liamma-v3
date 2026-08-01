@@ -35,7 +35,6 @@ export default function Home() {
               <Link href="https://github.com/Western-Artificial-Intelligence/video-virality-predictor" className="wiggle-link">Western AI</Link>
             </li>
             <li>&gt; building {" "}<Link href="https://github.com/liamma06/LLM" className="wiggle-link">LLM</Link>  from first principles</li>
-            <li>&gt; exploring storytelling through film & photo</li>
           </ul>
         </FadeIn>
       </div>
