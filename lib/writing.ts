@@ -17,6 +17,7 @@ export interface NoteMetadata {
   image?: string;
   imagePosition?: string;
   category?: string;
+  pinned?: boolean;
 }
 
 export interface Heading {
@@ -77,8 +78,13 @@ export function getAllNotes(): NoteMetadata[] {
   return [...slugs].map(slug => {
     const { filePath } = resolveNoteFile(slug);
     const { data } = matter(fs.readFileSync(filePath, 'utf8'));
-    return { slug, title: data.title, date: data.date, description: data.description, image: data.image, imagePosition: data.imagePosition, category: data.category };
-  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    return { slug, title: data.title, date: data.date, description: data.description, image: data.image, imagePosition: data.imagePosition, category: data.category, pinned: data.pinned };
+  }).sort((a, b) => {
+    if (!!a.pinned !== !!b.pinned) return a.pinned ? -1 : 1;
+    const aTime = new Date(a.date).getTime() || 0;
+    const bTime = new Date(b.date).getTime() || 0;
+    return bTime - aTime;
+  });
 }
 
 export async function getNoteBySlug(slug: string) {

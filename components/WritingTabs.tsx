@@ -48,19 +48,23 @@ function WritingCard({ note }: { note: NoteMetadata }) {
               {note.description}
             </p>
           )}
+          {note.date && (
+            <span
+              className="text-[0.8rem] mt-1 block"
+              style={{ color: hasImage ? 'rgba(255,255,255,0.38)' : 'var(--subtle)' }}
+            >
+              {note.date}
+            </span>
+          )}
+        </div>
+        {note.date && (
           <span
-            className="text-[0.8rem] mt-1 block"
+            className="md:hidden text-[0.8rem] mt-1 block"
             style={{ color: hasImage ? 'rgba(255,255,255,0.38)' : 'var(--subtle)' }}
           >
             {note.date}
           </span>
-        </div>
-        <span
-          className="md:hidden text-[0.8rem] mt-1 block"
-          style={{ color: hasImage ? 'rgba(255,255,255,0.38)' : 'var(--subtle)' }}
-        >
-          {note.date}
-        </span>
+        )}
       </div>
     </Link>
   );
