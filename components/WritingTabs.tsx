@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FadeIn } from '@/components/FadeIn';
 import type { NoteMetadata } from '@/lib/writing';
 
@@ -22,10 +23,12 @@ function WritingCard({ note }: { note: NoteMetadata }) {
       style={{ background: hasImage ? '#0d0d0d' : 'var(--surface)' }}
     >
       {hasImage && (
-        <img
-          src={note.image}
+        <Image
+          src={note.image!}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 42rem"
+          className="object-cover"
           style={{ opacity: 0.82, objectPosition: note.imagePosition ?? 'center' }}
         />
       )}
