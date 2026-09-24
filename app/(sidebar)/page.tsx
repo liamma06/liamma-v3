@@ -43,7 +43,16 @@ export default function Home() {
         <p className="font-semibold text-base text-muted">Projects</p>
         <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
         
-           <ProjectCard
+          <ProjectCard
+            video="/projects/signal.mp4"
+            autoPlay
+            title="Signal"
+            href="https://devpost.com/software/temp-project-0sp3zv"
+            date="sept '26"
+            description="A multi-agent financial research tool that answers questions over RBC's data via MCP, citing exact sources and tracing logic. Won at Hack The North 26"
+          />
+
+          <ProjectCard
             video="/projects/makeitshorts.mp4"
             autoPlay
             title="Make It Shorts"
