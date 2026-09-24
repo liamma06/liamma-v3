@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, type ReactNode } from "react";
 
 interface ProjectCardProps {
   image?: string;
@@ -8,7 +8,7 @@ interface ProjectCardProps {
   autoPlay?: boolean;
   title: string;
   date: string;
-  description: string;
+  description: ReactNode;
   href?: string;
 }
 

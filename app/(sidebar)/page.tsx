@@ -83,7 +83,7 @@ export default function Home() {
             title="Care Bridge"
             href="https://github.com/liamma06/Spark"
             date="jan '26"
-            description="A full-stack healthcare platform that transforms unstructured patient conversations into clinical timelines to streamline rural care coordination. Won at Spark Hacks 2026."
+            description={<>A full-stack healthcare platform that transforms unstructured patient conversations into clinical timelines to streamline rural care coordination. <strong>Won at Spark Hacks 2026.</strong></>}
           />
           <ProjectCard
             image="/projects/TTIhomepage.png"
