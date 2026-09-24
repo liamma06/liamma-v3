@@ -46,7 +46,3 @@ next-env.d.ts
 CLAUDE.md
 AGENTS.md
 
-# large video files hosted on Vercel Blob
-public/braindump/2026/Foggy.MP4
-public/braindump/2026/tree.MP4
-

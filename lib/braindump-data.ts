@@ -28,7 +28,7 @@ export const BRAINDUMP_DATA: YearData = {
     { id: '2026-v3', type: 'video', content: '/braindump/2026/night.mp4', label: "japan in may",},
     { id: '2026-v4', type: 'video', content: '/braindump/2026/sign.mp4' },
     { id: '2026-v5', type: 'video', content: '/braindump/2026/taxi.mp4' },
-    { id: '2026-v6', type: 'video', content: 'https://xhgc9k5ohb8e3k1o.public.blob.vercel-storage.com/Foggy.MP4' },
-    { id: '2026-v7', type: 'video', content: 'https://xhgc9k5ohb8e3k1o.public.blob.vercel-storage.com/tree.MP4', label: "sister & tree" },
+    { id: '2026-v6', type: 'video', content: '/braindump/2026/Foggy.MP4' },
+    { id: '2026-v7', type: 'video', content: '/braindump/2026/tree.MP4', label: "sister & tree" },
   ]
 };
