@@ -49,7 +49,7 @@ export default function Home() {
             title="Signal"
             href="https://devpost.com/software/temp-project-0sp3zv"
             date="sept '26"
-            description="A multi-agent financial research tool that answers questions over RBC's data via MCP, citing exact sources and tracing logic. Won at Hack The North 26"
+            description={<>A multi-agent financial research tool that answers questions over RBC's data via MCP, citing exact sources and tracing logic. <strong>Won at Hack The North 26</strong></>}
           />
 
           <ProjectCard
@@ -67,30 +67,15 @@ export default function Home() {
             title="Video Virality Predictor"
             href="https://liamma.com/writing/clipfarm"
             date="april '26"
-            description="Multimodal model that predicts the virality of a video. presented at CUCAI 26 "
+            description={<>Multimodal model that predicts the virality of a video. <strong>Presented at CUCAI 26 </strong></>}
           />
 
-          <ProjectCard
-            video="/projects/VibeVid.mp4"
-            autoPlay
-            title="Vibe Vids"
-            href="https://github.com/liamma06/VibeVids"
-            date="nov '25"
-            description="Automates Instagram growth by using AI influencers to script, generate, and schedule short-form content."
-          />
           <ProjectCard
             image="/projects/Spark-1-image.jpg"
             title="Care Bridge"
             href="https://github.com/liamma06/Spark"
             date="jan '26"
             description={<>A full-stack healthcare platform that transforms unstructured patient conversations into clinical timelines to streamline rural care coordination. <strong>Won at Spark Hacks 2026.</strong></>}
-          />
-          <ProjectCard
-            image="/projects/TTIhomepage.png"
-            title="Trash To Impress"
-            href="https://github.com/liamma06/trashtoimpress"
-            date="oct '25"
-            description="Product designing tool for reusing waste materials, powered by Gemini and LangChain workflow."
           />
         </div>
       </FadeIn>
