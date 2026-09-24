@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, type ReactNode } from "react";
+import Image from "next/image";
 
 interface ProjectCardProps {
   image?: string;
@@ -47,10 +48,12 @@ export function ProjectCard({ image, video, autoPlay = false, title, date, descr
         onMouseLeave={handleMouseLeave}
       >
         {image && (
-          <img
+          <Image
             src={image}
             alt={title}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showVideo && video ? "opacity-0" : "opacity-100"}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className={`object-cover transition-opacity duration-300 ${showVideo && video ? "opacity-0" : "opacity-100"}`}
           />
         )}
         {video && (
